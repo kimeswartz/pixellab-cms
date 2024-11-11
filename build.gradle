@@ -21,10 +21,28 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    runtimeOnly 'org.mariadb.jdbc:mariadb-java-client' // MariaDB driver
+
+
+    implementation 'jakarta.validation:jakarta.validation-api:3.1.0'  // Jakarta Validation API
+    implementation 'org.hibernate.validator:hibernate-validator:6.2.0.Final'  // Hibernate Validator implementation
+    implementation 'org.glassfish:javax.el:3.0.0' // For Expression Language (used by Hibernate Validator)
+
+// JWT Dependencies for jjwt 0.12.6
+    implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+    implementation 'io.jsonwebtoken:jjwt-impl:0.11.5'
+    implementation 'io.jsonwebtoken:jjwt-jackson:0.11.5'
+
+
+
+    // MariaDB driver
+    runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+
+
 }
 
 tasks.named('test') {
